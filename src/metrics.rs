@@ -276,7 +276,15 @@ impl Instruments {
             let val: &[u8] = i.as_val();
             match self.observe(c, key, val) {
                 Ok(_) => {}
-                Err(e) => handler(e),
+                Err(e) => {
+                    let we = std::str::from_utf8(key)
+                        .ok()
+                        .map(|k: &str| {
+                            Event::UnexpectedError(format!("key: {}, error: {:#?}", k, e))
+                        })
+                        .unwrap_or(e);
+                    handler(we)
+                }
             }
         });
     }
