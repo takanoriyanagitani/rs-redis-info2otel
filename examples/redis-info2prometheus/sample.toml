@@ -1,0 +1,95 @@
+# server
+[[builders]]
+key = "uptime_in_seconds"
+description = "Number of seconds since Redis server start."
+unit = ""
+gauge_type = "u64"
+
+[[builders]]
+key = "hz"
+description = "The server's current frequency setting."
+unit = ""
+gauge_type = "u64"
+
+[[builders]]
+key = "configured_hz"
+description = "The server's configured frequency setting."
+unit = ""
+gauge_type = "u64"
+
+[[builders]]
+key = "lru_clock"
+description = "Clock incrementing every minute, for LRU management."
+unit = ""
+gauge_type = "u64"
+
+[[builders]]
+key = "io_threads_active"
+description = "Flag indicating if I/O threads are active."
+unit = ""
+gauge_type = "u64"
+
+[[builders]]
+key = "server_time_usec"
+description = "Epoch-based system time with microsecond precision."
+unit = ""
+gauge_type = "u64"
+
+# clients
+
+[[builders]]
+key = "connected_clients"
+description = "Number of connected clients(excluding connections from replicas)."
+unit = ""
+gauge_type = "u64"
+
+[[builders]]
+key = "cluster_connections"
+description = "An approximation of the number of sockets used by the cluster's bus."
+unit = ""
+gauge_type = "u64"
+
+[[builders]]
+key = "maxclients"
+description = "The value of the maxclients configuration directive."
+unit = ""
+gauge_type = "u64"
+
+[[builders]]
+key = "client_recent_max_input_buffer"
+description = "Biggest input buffer among current client connections."
+unit = ""
+gauge_type = "u64"
+
+[[builders]]
+key = "client_recent_max_output_buffer"
+description = "Biggest output buffer among current client connections."
+unit = ""
+gauge_type = "u64"
+
+[[builders]]
+key = "blocked_clients"
+description = "Number of clients pending on a blocking call."
+unit = ""
+gauge_type = "u64"
+
+[[builders]]
+key = "tracking_clients"
+description = "Number of clients begin tracked."
+unit = ""
+gauge_type = "u64"
+
+[[builders]]
+key = "clients_in_timeout_table"
+description = "Number of clients in the clients timeout table."
+unit = ""
+gauge_type = "u64"
+
+# cpu
+
+[[builders]]
+key = "used_cpu_sys"
+description = "Number of system CPU seconds used by the redis server."
+unit = ""
+gauge_type = "f64"
+
