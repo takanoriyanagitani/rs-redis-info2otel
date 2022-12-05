@@ -2,7 +2,7 @@
 [[builders]]
 key = "uptime_in_seconds"
 description = "Number of seconds since Redis server start."
-unit = ""
+unit = "second"
 gauge_type = "u64"
 
 [[builders]]
@@ -32,7 +32,7 @@ gauge_type = "u64"
 [[builders]]
 key = "server_time_usec"
 description = "Epoch-based system time with microsecond precision."
-unit = ""
+unit = "micro seconds"
 gauge_type = "u64"
 
 # clients
@@ -82,6 +82,140 @@ gauge_type = "u64"
 [[builders]]
 key = "clients_in_timeout_table"
 description = "Number of clients in the clients timeout table."
+unit = ""
+gauge_type = "u64"
+
+# memory
+
+[[builders]]
+key = "used_memory"
+description = "Total number of bytes allocated by Redis."
+unit = "bytes"
+gauge_type = "u64"
+
+[[builders]]
+key = "used_memory_rss"
+description = "Number of bytes that Redis allocated as seen by the OS."
+unit = "bytes"
+gauge_type = "u64"
+
+[[builders]]
+key = "used_memory_peak"
+description = "Peak memory consumed by Redis."
+unit = "bytes"
+gauge_type = "u64"
+
+[[builders]]
+key = "used_memory_overhead"
+description = "The sum in bytes of all overheads that the server allocated for managing its internal data structures."
+unit = "bytes"
+gauge_type = "u64"
+
+[[builders]]
+key = "used_memory_startup"
+description = "Initial amount of memory consumed by Redis at startup."
+unit = "bytes"
+gauge_type = "u64"
+
+[[builders]]
+key = "total_system_memory"
+description = "The total amount of memory that the Redis host has."
+unit = "bytes"
+gauge_type = "u64"
+
+[[builders]]
+key = "used_memory_lua"
+description = "Number of bytes used by the Lua engine."
+unit = "bytes"
+gauge_type = "u64"
+
+[[builders]]
+key = "used_memory_scripts"
+description = "Number of bytes used by cached Lua scripts."
+unit = "bytes"
+gauge_type = "u64"
+
+[[builders]]
+key = "maxmemory"
+description = "The value of the maxmemory configuration directive."
+unit = "bytes"
+gauge_type = "u64"
+
+[[builders]]
+key = "allocator_allocated"
+description = "Total bytes allocated from the allocator."
+unit = "bytes"
+gauge_type = "u64"
+
+[[builders]]
+key = "allocator_active"
+description = "Total bytes in the allocator active pages."
+unit = "bytes"
+gauge_type = "u64"
+
+[[builders]]
+key = "allocator_resident"
+description = "Total bytes in resident in the allocator."
+unit = "bytes"
+gauge_type = "u64"
+
+[[builders]]
+key = "mem_not_counted_for_evict"
+description = "Used memory that's not counted for key eviction."
+unit = "bytes"
+gauge_type = "u64"
+
+[[builders]]
+key = "mem_clients_slaves"
+description = "Memory used by replica clients."
+unit = "bytes"
+gauge_type = "u64"
+
+[[builders]]
+key = "mem_clients_normal"
+description = "Memory used by normal clients."
+unit = "bytes"
+gauge_type = "u64"
+
+[[builders]]
+key = "mem_cluster_links"
+description = "Memory used by links to peers on the cluster bus."
+unit = "bytes"
+gauge_type = "u64"
+
+[[builders]]
+key = "mem_aof_buffer"
+description = "Transient memory used for AOF and AOF rewrite buffers."
+unit = "bytes"
+gauge_type = "u64"
+
+[[builders]]
+key = "mem_replication_backlog"
+description = "Memory used by replication backlog"
+unit = "bytes"
+gauge_type = "u64"
+
+[[builders]]
+key = "mem_total_replication_buffers"
+description = "Total memory consumed for replication buffers."
+unit = "bytes"
+gauge_type = "u64"
+
+[[builders]]
+key = "active_defrag_running"
+description = "This indicates whether defragmentation is currently active."
+unit = ""
+gauge_type = "u64"
+
+[[builders]]
+key = "lazyfree_pending_objects"
+description = "The number of objects waiting to be freed."
+unit = ""
+gauge_type = "u64"
+
+[[builders]]
+key = "lazyfreed_objects"
+description = "The number of objects that has been lazy freed."
 unit = ""
 gauge_type = "u64"
 
