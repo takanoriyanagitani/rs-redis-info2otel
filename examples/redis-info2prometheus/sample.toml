@@ -26,7 +26,7 @@ gauge_type = "u64"
 [[builders]]
 key = "io_threads_active"
 description = "Flag indicating if I/O threads are active."
-unit = ""
+unit = "flag"
 gauge_type = "u64"
 
 [[builders]]
@@ -191,7 +191,7 @@ gauge_type = "u64"
 
 [[builders]]
 key = "mem_replication_backlog"
-description = "Memory used by replication backlog"
+description = "Memory used by replication backlog."
 unit = "bytes"
 gauge_type = "u64"
 
@@ -218,6 +218,158 @@ key = "lazyfreed_objects"
 description = "The number of objects that has been lazy freed."
 unit = ""
 gauge_type = "u64"
+
+# persistence
+
+[[builders]]
+key = "loading"
+description = "Flag indicating if the load of a dump file is on-going."
+unit = "flag"
+gauge_type = "u64"
+
+[[builders]]
+key = "async_loading"
+description = "Currently loading replication data-set asynchronously while serving old data."
+unit = ""
+gauge_type = "u64"
+
+[[builders]]
+key = "current_cow_peak"
+description = "The peak size in bytes of copy-on-write memory while a child fork is running."
+unit = "bytes"
+gauge_type = "u64"
+
+[[builders]]
+key = "current_cow_size"
+description = "The size in bytes of copy-on-write memory while a child fork is running."
+unit = "bytes"
+gauge_type = "u64"
+
+[[builders]]
+key = "current_cow_size_age"
+description = "The age, in seconds, of the current_cow_size value."
+unit = "seconds"
+gauge_type = "u64"
+
+[[builders]]
+key = "current_save_keys_processed"
+description = "Number of keys processed by the current save operation."
+unit = ""
+gauge_type = "u64"
+
+[[builders]]
+key = "current_save_keys_total"
+description = "Number of keys at the beginning of the current save operation."
+unit = ""
+gauge_type = "u64"
+
+[[builders]]
+key = "rdb_changes_since_last_save"
+description = "Number of changes since the last dump."
+unit = ""
+gauge_type = "u64"
+
+[[builders]]
+key = "rdb_bgsave_in_progress"
+description = "Flag indicating a RDB save is on-going."
+unit = "flag"
+gauge_type = "u64"
+
+[[builders]]
+key = "rdb_last_save_time"
+description = "Epoch-based timestamp of last successful RDB save."
+unit = "seconds"
+gauge_type = "u64"
+
+[[builders]]
+key = "rdb_last_bgsave_time_sec"
+description = "Duration of the last RDB save operation in seconds."
+unit = "seconds"
+gauge_type = "i64"
+
+[[builders]]
+key = "rdb_current_bgsave_time_sec"
+description = "Duration of the on-going RDB save operation if any."
+unit = "seconds"
+gauge_type = "i64"
+
+[[builders]]
+key = "rdb_last_cow_size"
+description = "The size in bytes of copy-on-write memory during the last RDB save operation."
+unit = "bytes"
+gauge_type = "i64"
+
+[[builders]]
+key = "rdb_last_load_keys_expired"
+description = "Number volatile keys deleted during the last RDB loading."
+unit = ""
+gauge_type = "i64"
+
+[[builders]]
+key = "rdb_last_load_keys_loaded"
+description = "Number of keys loaded during the last RDB loading."
+unit = ""
+gauge_type = "i64"
+
+[[builders]]
+key = "aof_enabled"
+description = "Flag indicating AOF logging is activated."
+unit = "flag"
+gauge_type = "i64"
+
+[[builders]]
+key = "aof_rewrite_in_progress"
+description = "Flag indicating an AOF rewrite operation is on-going."
+unit = "flag"
+gauge_type = "i64"
+
+[[builders]]
+key = "aof_rewrite_scheduled"
+description = "Flag indicating an AOF rewrite operation will be scheduled once the on-going RDB save is complete."
+unit = "flag"
+gauge_type = "i64"
+
+[[builders]]
+key = "aof_last_rewrite_time_sec"
+description = "Duration of the last AOF rewrite operation in seconds."
+unit = "seconds"
+gauge_type = "i64"
+
+[[builders]]
+key = "aof_current_rewrite_time_sec"
+description = "Duration of the on-going AOF rewrite operation if any."
+unit = "seconds"
+gauge_type = "i64"
+
+[[builders]]
+key = "aof_last_cow_size"
+description = "The size in bytes of copy-on-write memory during the last AOF rewrite operation."
+unit = "bytes"
+gauge_type = "i64"
+
+[[builders]]
+key = "module_fork_in_progress"
+description = "Flag indicating a module fork is on-going."
+unit = "flag"
+gauge_type = "i64"
+
+[[builders]]
+key = "module_fork_last_cow_size"
+description = "The size in bytes of copy-on-write memory during the last module fork operation."
+unit = "bytes"
+gauge_type = "i64"
+
+[[builders]]
+key = "aof_rewrites"
+description = "Number of AOF rewrites performed since startup."
+unit = ""
+gauge_type = "i64"
+
+[[builders]]
+key = "rdb_saves"
+description = "Number of RDB snapshots performed since startup."
+unit = ""
+gauge_type = "i64"
 
 # cpu
 
