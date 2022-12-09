@@ -371,6 +371,288 @@ description = "Number of RDB snapshots performed since startup."
 unit = ""
 gauge_type = "i64"
 
+[[builders]]
+key = "total_connections_received"
+description = "Total number of connections accepted by the server."
+unit = ""
+gauge_type = "i64"
+
+[[builders]]
+key = "total_commands_processed"
+description = "Total number of commands processed by the server."
+unit = ""
+gauge_type = "i64"
+
+[[builders]]
+key = "total_net_input_bytes"
+description = "The total number of bytes read from the network."
+unit = "byte"
+gauge_type = "i64"
+
+[[builders]]
+key = "total_net_output_bytes"
+description = "The total number of bytes written to the network."
+unit = "byte"
+gauge_type = "i64"
+
+[[builders]]
+key = "total_net_repl_input_bytes"
+description = "The total number of bytes read from the network for replication purposes."
+unit = "byte"
+gauge_type = "i64"
+
+[[builders]]
+key = "total_net_repl_output_bytes"
+description = "The total number of bytes written to the network for replication purposes."
+unit = "byte"
+gauge_type = "i64"
+
+[[builders]]
+key = "instantaneous_input_kbps"
+description = "The network's read rate per second in KB/sec."
+unit = "KB/sec"
+gauge_type = "f64"
+
+[[builders]]
+key = "instantaneous_output_kbps"
+description = "The network's write rate per second in KB/sec."
+unit = "KB/sec"
+gauge_type = "f64"
+
+[[builders]]
+key = "instantaneous_input_repl_kbps"
+description = "The network's read rate per second in KB/sec for replication purposes."
+unit = "KB/sec"
+gauge_type = "f64"
+
+[[builders]]
+key = "instantaneous_output_repl_kbps"
+description = "The network's write rate per second in KB/sec for replication purposes."
+unit = "KB/sec"
+gauge_type = "f64"
+
+[[builders]]
+key = "rejected_connections"
+description = "Number of connections rejected because of maxclients limit."
+unit = ""
+gauge_type = "i64"
+
+[[builders]]
+key = "sync_full"
+description = "The number of full resyncs with replicas."
+unit = ""
+gauge_type = "i64"
+
+[[builders]]
+key = "sync_partial_ok"
+description = "The number of accepted partial resync requests."
+unit = ""
+gauge_type = "i64"
+
+[[builders]]
+key = "sync_partial_err"
+description = "The number of denied partial resync requests."
+unit = ""
+gauge_type = "i64"
+
+[[builders]]
+key = "expired_keys"
+description = "Total number of key expiration events."
+unit = ""
+gauge_type = "i64"
+
+[[builders]]
+key = "expired_stale_perc"
+description = "The percentage of keys probably expired."
+unit = ""
+gauge_type = "f64"
+
+[[builders]]
+key = "expired_time_cap_reached_count"
+description = "The count of times that active expiry cycles have stopped early."
+unit = ""
+gauge_type = "i64"
+
+[[builders]]
+key = "expire_cycle_cpu_milliseconds"
+description = "The cumulative amount of time spend on active expiry cycles."
+unit = "ms"
+gauge_type = "i64"
+
+[[builders]]
+key = "evicted_keys"
+description = "Number of evicted keys due to maxmemory limit."
+unit = ""
+gauge_type = "i64"
+
+[[builders]]
+key = "evicted_clients"
+description = "Number of evicted clients due to maxmemory-clients limit."
+unit = ""
+gauge_type = "i64"
+
+[[builders]]
+key = "total_eviction_exceeded_time"
+description = "Total time used_memory was greater than maxmemory since server startup, in milliseconds."
+unit = "ms"
+gauge_type = "i64"
+
+[[builders]]
+key = "current_eviction_exceeded_time"
+description = "The time passed since used_memory last rose above maxmemory, in milliseconds."
+unit = "ms"
+gauge_type = "i64"
+
+[[builders]]
+key = "keyspace_hits"
+description = "Number of successful lookup of keys in the main dictionary."
+unit = ""
+gauge_type = "i64"
+
+[[builders]]
+key = "keyspace_misses"
+description = "Number of failed lookup of keys in the main dictionary."
+unit = ""
+gauge_type = "i64"
+
+[[builders]]
+key = "pubsub_channels"
+description = "Global number of pub/sub channels with client subscriptions."
+unit = ""
+gauge_type = "i64"
+
+[[builders]]
+key = "pubsub_patterns"
+description = "Global number of pub/sub pattern with client subscriptions."
+unit = ""
+gauge_type = "i64"
+
+[[builders]]
+key = "pubsubshard_channels"
+description = "Global number of pub/sub shard channels with client subscriptions."
+unit = ""
+gauge_type = "i64"
+
+[[builders]]
+key = "latest_fork_usec"
+description = "Duration of the latest fork operation in microseconds."
+unit = "us"
+gauge_type = "i64"
+
+[[builders]]
+key = "total_forks"
+description = "Total number of fork operations since the server start."
+unit = ""
+gauge_type = "i64"
+
+[[builders]]
+key = "migrate_cached_sockets"
+description = "The number of sockets open for MIGRATE purposes."
+unit = ""
+gauge_type = "i64"
+
+[[builders]]
+key = "slave_expires_tracked_keys"
+description = "The number of keys tracked for expiry purposes."
+unit = ""
+gauge_type = "i64"
+
+[[builders]]
+key = "active_defrag_hits"
+description = "Number of value reallocations performed by the active defragmentation process."
+unit = ""
+gauge_type = "i64"
+
+[[builders]]
+key = "active_defrag_misses"
+description = "Number of aborted value reallocations started by the active defragmentation process."
+unit = ""
+gauge_type = "i64"
+
+[[builders]]
+key = "active_defrag_key_hits"
+description = "Number of keys that were actively defragmented."
+unit = ""
+gauge_type = "i64"
+
+[[builders]]
+key = "active_defrag_key_misses"
+description = "Number of keys that were skipped by the active defragmentation process."
+unit = ""
+gauge_type = "i64"
+
+[[builders]]
+key = "total_active_defrag_time"
+description = "Total time memory fragmentation was over the limit, in milliseconds."
+unit = "ms"
+gauge_type = "i64"
+
+[[builders]]
+key = "current_active_defrag_time"
+description = "The time passed since memory fragmentation last was over the limit, in milliseconds."
+unit = "ms"
+gauge_type = "i64"
+
+[[builders]]
+key = "tracking_total_keys"
+description = "Number of keys being tracked by the server."
+unit = ""
+gauge_type = "i64"
+
+[[builders]]
+key = "tracking_total_items"
+description = "Number of items, that is the sum of clients number for each key, that are being tracked."
+unit = ""
+gauge_type = "i64"
+
+[[builders]]
+key = "tracking_total_prefixes"
+description = "Number of tracked prefixes in server's prefix table."
+unit = ""
+gauge_type = "i64"
+
+[[builders]]
+key = "unexpected_error_replies"
+description = "Number of unexpected error replicas, that are types of errors from an AOF load or replication."
+unit = ""
+gauge_type = "i64"
+
+[[builders]]
+key = "total_error_replies"
+description = "Total number of issued error replicas, that is the sum of rejected commands and failed commands."
+unit = ""
+gauge_type = "i64"
+
+[[builders]]
+key = "dump_payload_sanitizations"
+description = "Total number of dump payload deep integrity validations."
+unit = ""
+gauge_type = "i64"
+
+[[builders]]
+key = "total_reads_processed"
+description = "Total number of read events processed."
+unit = ""
+gauge_type = "i64"
+
+[[builders]]
+key = "total_writes_processed"
+description = "Total number of write events processed."
+unit = ""
+gauge_type = "i64"
+
+[[builders]]
+key = "io_threaded_reads_processed"
+description = "Number of read events processed by the main and I/O threads."
+unit = ""
+gauge_type = "i64"
+
+[[builders]]
+key = "io_threaded_writes_processed"
+description = "Number of write events processed by the main and I/O threads."
+unit = ""
+gauge_type = "i64"
+
 # cpu
 
 [[builders]]
