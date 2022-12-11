@@ -371,6 +371,8 @@ description = "Number of RDB snapshots performed since startup."
 unit = ""
 gauge_type = "i64"
 
+# stats
+
 [[builders]]
 key = "total_connections_received"
 description = "Total number of connections accepted by the server."
@@ -657,7 +659,37 @@ gauge_type = "i64"
 
 [[builders]]
 key = "used_cpu_sys"
-description = "Number of system CPU seconds used by the redis server."
+description = "System CPU consumed by the Redis server."
+unit = ""
+gauge_type = "f64"
+
+[[builders]]
+key = "used_cpu_user"
+description = "User CPU consumed by the Redis server."
+unit = ""
+gauge_type = "f64"
+
+[[builders]]
+key = "used_cpu_sys_children"
+description = "System CPU consumed by the background processes."
+unit = ""
+gauge_type = "f64"
+
+[[builders]]
+key = "used_cpu_user_children"
+description = "User CPU consumed by the background processes."
+unit = ""
+gauge_type = "f64"
+
+[[builders]]
+key = "used_cpu_sys_main_thread"
+description = "System CPU consumed by the Redis server main thread."
+unit = ""
+gauge_type = "f64"
+
+[[builders]]
+key = "used_cpu_user_main_thread"
+description = "User CPU consumed by the Redis server main thread."
 unit = ""
 gauge_type = "f64"
 
