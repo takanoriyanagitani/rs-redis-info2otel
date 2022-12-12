@@ -693,3 +693,17 @@ description = "User CPU consumed by the Redis server main thread."
 unit = ""
 gauge_type = "f64"
 
+# errorstats
+
+[[builders]]
+key = "errorstat_ERR"
+description = "Number of ERRs."
+unit = ""
+gauge_type = "u64"
+
+[[builders]]
+key = "errorstat_WRONGTYPE"
+description = "Number of WRONGTYPEs."
+unit = ""
+gauge_type = "u64"
+
